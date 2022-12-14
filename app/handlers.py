@@ -61,6 +61,3 @@ def create_user(
     database.add(new_user)
     database.commit()
     return{'user_id': new_user.id}
-
-
-

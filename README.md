@@ -5,30 +5,55 @@
 - SQLAlchemy 1.4.45
 - Docker 20.10.16
 - docker-compose 1.29.2
-### Как запустить проект:
+### Как запустить приложение, используя Docker:
 
-Клонировать репозиторий и перейти в него в командной строке:
+Клонировать репозиторий:
 
 ```
 git clone https://github.com/DmitriiParshin/first_project_fastapi.git
 ```
 
+В директории проекта создать файл .env, в котором прописать переменные окружения:
+
+- DB_NAME=fastapi_app.db
+- SECRET_KEY=secret
+
+Запустить приложение в контейнере:
+
+```
+docker-compose up
+```
+
+Документация для приложения:
+
+```
+http://127.0.0.1:8000/docs/
+```
+
+### Как запустить проект без использования Docker:
+
+Клонировать репозиторий:
+
+```
+git clone https://github.com/DmitriiParshin/first_project_fastapi.git
+```
+
+Перейти в директорию проекта:
+
 ```
 cd first_project_fastapi
 ```
 
-Cоздать и активировать виртуальное окружение:
+Cоздать виртуальное окружение:
 
 ```
 python3 -m venv env
 ```
 
-```
-source venv/bin/activate
-```
+Активировать виртуальное окружение:
 
 ```
-python3 -m pip install --upgrade pip
+source venv/bin/activate
 ```
 
 Установить зависимости:
@@ -41,12 +66,6 @@ pip install -e .
 
 ```
 uvicorn main:app
-```
-
-Запустить приложение в контейнере:
-
-```
-docker-compose up
 ```
 
 Документация для приложения:
